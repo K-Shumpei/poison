@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="function.js"></script>
+    </head>
+
+    <body>
+
+    <div id="typename">
+        <form id="emitName" action="">
+            <input id="name" autocomplete="off" placeholder="名前を入力" autofocus><button>入室</button>
+        </form>
+    </div>
+
+    <div id="party">
+        自分：<span id="myname"></span><span id="host"></span><br>
+        参加者：<span id="member"></span>
+        
+        <div id="hostButton">
+            <form id="startGame" action="">
+                <button>開始</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="main">
+        <table align="center">
+            <tr><th id="miracle"></th></tr>
+        </table>
+        <table align="center" width="100%">
+            <tr>
+                <td>
+                    <table id="turnPlayer" align="center" border="1"></table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <table align="center" border="1">
+                                    <tr align="center">
+                                        <td id="pot_0_tab">壺1</td>
+                                        <td id="pot_1_tab">壺2</td>
+                                        <td id="pot_2_tab">壺3</td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td><span id="pot_0_color"></span>　残り<span id="pot_0_left">13</span></td>
+                                        <td><span id="pot_1_color"></span>　残り<span id="pot_1_left">13</span></td>
+                                        <td><span id="pot_2_color"></span>　残り<span id="pot_2_left">13</span></td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td width="130" height="240"><span id="pot_0"></span></td>
+                                        <td width="130" height="240"><span id="pot_1"></span></td>
+                                        <td width="130" height="240"><span id="pot_2"></span></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="20"></td>
+                            <td>
+                                <table align="center" border="1">
+                                    <tr align="center"><td>今起きたこと</td></tr>
+                                    <tr><td width="180" height="270"><span id="log"></span></td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr><td colspan="3">
+                            <form id="myInfo" action="">
+                                <table id="information">
+                                    <tr><td>手札</td></tr>
+                                    <tr id="hand"></tr>
+                                </table>
+                                <table>
+                                    <tr><td>出す壺</td></tr>
+                                    <tr id="selectPot"></tr>
+                                </table>
+                                <table>
+                                    <tr><td>取り札</td></tr>
+                                    <tr><td>赤：<span id="get_red" style="color:#FF367F"></span></td></tr>
+                                    <tr><td>青：<span id="get_blue" style="color:#2C7CFF"></span></td></tr>
+                                    <tr><td>紫：<span id="get_purple" style="color:#7B3CFF"></span></td></tr>
+                                    <tr><td>緑：<span id="get_green" style="color:#2DFF57"></span></td></tr>
+                                </table>
+                            </form>
+                        </td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr><td>
+                            <div id="result">
+                                結果
+                                <table id="result_table" border="1"></table>
+                            </div>
+                        </td></tr>
+                        <tr><td>
+                            <div id="hostButton2">
+                                <form id="onemore" action="">
+                                    <button>戻る</button>
+                                </form>
+                            </div>
+                        </td></tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        
+    </div>
+
+
+
+    <script>
+        document.getElementById("party").style.display = "none"
+        document.getElementById("main").style.display = "none"
+        document.getElementById("hostButton").style.display = "none"
+        document.getElementById("result").style.display = "none"
+        document.getElementById("hostButton2").style.display = "none"
+    </script>
+
+
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    </body>
+
+</html>
