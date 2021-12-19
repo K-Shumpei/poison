@@ -223,10 +223,9 @@ $(function () {
                 }
             }
         } else {
-            let getCard = []
+            const input = document.getElementById("pot_" + pot_num).textContent
+            let getCard = splitCards(input)
             if (document.getElementById("name" + turnPlayer).textContent == document.getElementById("myname").textContent){
-                const input = document.getElementById("pot_" + pot_num).textContent
-                getCard = splitCards(input)
                 for (let i = 0; i < getCard.length; i++){
                     for (const col of color_index){
                         if (col.jp == getCard[i].slice(0, 1)){
@@ -357,10 +356,12 @@ $(function () {
         document.getElementById("turnPlayer").innerHTML = ""
         document.getElementById("hand").innerHTML = ""
         document.getElementById("selectPot").innerHTML = ""
+        document.getElementById("log").innerHTML = ""
         for (let i = 0; i < 3; i++){
             document.getElementById("pot_" + i + "_color").textContent = ""
             document.getElementById("pot_" + i + "_left").textContent = 13
-            document.getElementById("pot_" + i).value = ""
+            document.getElementById("pot_" + i).innerHTML = ""
+            document.getElementById("pot_" + i + "_tab").style.backgroundColor = ""
         }
         for (const col of color_index){
             document.getElementById("get_" + col.js).innerHTML = ""
